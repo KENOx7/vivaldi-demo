@@ -130,15 +130,44 @@ if (gridContainer) {
         // Removed 'group-hover:scale-105' from img to prevent cutting off corners
         card.innerHTML = `
             <img src="${col.image}" alt="${col.name}" class="w-full h-full object-cover transition-transform duration-700" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-            <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 class="text-white text-2xl font-bold tracking-wide drop-shadow-md">${col.name}</h3>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+            <div class="absolute bottom-0 left-0 w-full p-4 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 class="text-white text-lg md:text-2xl font-bold tracking-wide drop-shadow-lg leading-tight">${col.name}</h3>
                 <div class="h-0.5 w-0 bg-vivaldi-gold group-hover:w-full transition-all duration-500 ease-out mb-2"></div>
-                <p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">${col.label}</p>
+                <p class="text-gray-300 text-xs md:text-sm limit-text opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">${col.label}</p>
             </div>
         `;
 
         gridContainer.appendChild(card);
+    });
+}
+
+// Mobile View Toggle Logic
+const btn1Col = document.getElementById('view-1-col');
+const btn2Col = document.getElementById('view-2-col');
+const grid = document.getElementById('collections-grid');
+
+if (btn1Col && btn2Col && grid) {
+    btn1Col.addEventListener('click', () => {
+        grid.classList.remove('grid-cols-2');
+        grid.classList.add('grid-cols-1');
+
+        // Update Active State
+        btn1Col.classList.add('text-vivaldi-gold');
+        btn1Col.classList.remove('text-gray-400');
+        btn2Col.classList.add('text-gray-400');
+        btn2Col.classList.remove('text-vivaldi-gold');
+    });
+
+    btn2Col.addEventListener('click', () => {
+        grid.classList.remove('grid-cols-1');
+        grid.classList.add('grid-cols-2');
+
+        // Update Active State
+        btn2Col.classList.add('text-vivaldi-gold');
+        btn2Col.classList.remove('text-gray-400');
+        btn1Col.classList.add('text-gray-400');
+        btn1Col.classList.remove('text-vivaldi-gold');
     });
 }
 
