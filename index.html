@@ -181,9 +181,21 @@
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-vivaldi-text text-center mb-16">Kolleksiyalar</h2>
 
+            <!-- View Toggle (Mobile Only) -->
+            <div class="flex justify-end mb-4 md:hidden space-x-2">
+                <button id="view-1-col" class="p-2 text-vivaldi-gold transition-colors" title="Bir Sütun">
+                    <i class="fas fa-square fa-lg"></i>
+                </button>
+                <button id="view-2-col" class="p-2 text-gray-400 hover:text-vivaldi-gold transition-colors"
+                    title="İki Sütun">
+                    <i class="fas fa-th-large fa-lg"></i>
+                </button>
+            </div>
+
             <!-- Grid Layout -->
             <!-- Mobile: grid-cols-1 (Standard), Desktop: grid-cols-3 or 4 -->
-            <div id="collections-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div id="collections-grid"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
                 <!-- Collections will be loaded here via JavaScript -->
             </div>
 
