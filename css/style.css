@@ -15,7 +15,8 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #d4af37; /* vivaldi-gold */
+    background: #d4af37;
+    /* vivaldi-gold */
     border-radius: 5px;
 }
 
@@ -33,4 +34,13 @@ html {
 ::selection {
     background: #d4af37;
     color: white;
+}
+
+/* Brand Logo Styling */
+.brand-logo {
+    font-family: 'Cinzel', serif;
+    /* Trajan Pro alternative */
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
