@@ -1,0 +1,36 @@
+/* Custom Styles */
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4af37; /* vivaldi-gold */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b5952f;
+}
+
+/* Collection Item Hover Effects (Additional) */
+.collection-item:hover img {
+    /* Slight zoom is handled by Tailwind classes, adding subtle filter change if needed */
+    filter: brightness(1.1);
+}
+
+/* Text Selection Color */
+::selection {
+    background: #d4af37;
+    color: white;
+}
